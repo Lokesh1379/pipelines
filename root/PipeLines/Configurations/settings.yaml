@@ -1,0 +1,3 @@
+defaults:
+  workers: 4
+  memory: 8GB
