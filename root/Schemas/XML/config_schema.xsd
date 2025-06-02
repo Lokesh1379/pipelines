@@ -1,0 +1,3 @@
+<xs:schema>
+  <xs:element name="config"/>
+</xs:schema>
