@@ -1,0 +1,29 @@
+{
+  "id": "3174f308-9027-0634-bd6a-6e185753872d",
+  "nodesData": {
+    "id": "3174f308-9027-0634-bd6a-6e185753872d",
+    "job_nodes": []
+  },
+  "nodeEdges": {
+    "id": "3174f308-9027-0634-bd6a-6e185753872d",
+    "edges": []
+  },
+  "pipeLines": {
+    "id": "3174f308-9027-0634-bd6a-6e185753872d",
+    "job_name": "ADD COLUMN",
+    "run_type": "",
+    "Global_variables": [],
+    "Pipeline_variables": [],
+    "settings": {
+      "concurrancy": "",
+      "elapsed_time_metric": "",
+      "isElapsedTimeMetricChecked": false
+    },
+    "connections": [],
+    "tasks": [],
+    "isStarted": true,
+    "triggers": {},
+    "reRun": false,
+    "readOnly": false
+  }
+}
