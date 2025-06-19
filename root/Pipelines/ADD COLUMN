@@ -1,5 +1,28 @@
 {
   "id": "3174f308-9027-0634-bd6a-6e185753872d",
+  "nodeEdges": {
+    "id": "3174f308-9027-0634-bd6a-6e185753872d",
+    "edges": []
+  },
+  "nodesData": {
+    "id": "3174f308-9027-0634-bd6a-6e185753872d",
+    "job_nodes": [
+      {
+        "id": "1-1",
+        "name": "ReadJDBC",
+        "oprName": "JDBC_reader",
+        "type": "read io",
+        "connection_type": "JDBC",
+        "yamlPath": "/path/to/ioconnectors/readio/jdbc_reader.yaml",
+        "imgpath": "/images/sidebar/jdbc_reader.png",
+        "x": 202.109375,
+        "y": 97,
+        "uniqueId": "7165064a-8091-8c80-aef4-b747ae1451da",
+        "u_id": "cbe8abe9-eabc-afe0-5b3c-5d6d5ecd6206",
+        "activity_state": false
+      }
+    ]
+  },
   "pipeLines": {
     "id": "3174f308-9027-0634-bd6a-6e185753872d",
     "job_name": "ADD COLUMN",
@@ -12,18 +35,32 @@
       "isElapsedTimeMetricChecked": false
     },
     "connections": [],
-    "tasks": [],
+    "tasks": [
+      {
+        "u_id": "7165064a-8091-8c80-aef4-b747ae1451da",
+        "id": "1-1",
+        "opr_name": "JDBC_reader",
+        "name": "ReadJDBC",
+        "description": "",
+        "activity_state": false,
+        "timeout": "00:10:00",
+        "retry": 2,
+        "retry_interval": "00:01:00",
+        "secure_input": false,
+        "secure_output": false,
+        "input_items": [
+          {
+            "conn_id": "",
+            "tbname": "",
+            "query": ""
+          }
+        ],
+        "user_properties": []
+      }
+    ],
     "isStarted": true,
     "triggers": {},
     "reRun": false,
     "readOnly": false
-  },
-  "nodesData": {
-    "id": "3174f308-9027-0634-bd6a-6e185753872d",
-    "job_nodes": []
-  },
-  "nodeEdges": {
-    "id": "3174f308-9027-0634-bd6a-6e185753872d",
-    "edges": []
   }
 }
