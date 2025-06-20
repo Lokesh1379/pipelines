@@ -1,66 +1,163 @@
 {
+  "id": "3174f308-9027-0634-bd6a-6e185753872d",
+  "nodeEdges": {
     "id": "3174f308-9027-0634-bd6a-6e185753872d",
-    "pipeLines": {
-        "id": "3174f308-9027-0634-bd6a-6e185753872d",
-        "job_name": "ADD COLUMN",
-        "run_type": "",
-        "Global_variables": [],
-        "Pipeline_variables": [],
-        "settings": {
-            "concurrancy": "",
-            "elapsed_time_metric": "",
-            "isElapsedTimeMetricChecked": false
-        },
-        "connections": [],
-        "tasks": [
-            {
-                "u_id": "7165064a-8091-8c80-aef4-b747ae1451da",
-                "id": "1-1",
-                "opr_name": "JDBC_reader",
-                "name": "ReadJDBC",
-                "description": "",
-                "activity_state": false,
-                "timeout": "00:10:00",
-                "retry": 2,
-                "retry_interval": "00:01:00",
-                "secure_input": false,
-                "secure_output": false,
-                "input_items": [
-                    {
-                        "conn_id": "",
-                        "tbname": "",
-                        "query": ""
-                    }
-                ],
-                "user_properties": []
-            }
+    "edges": [
+      {
+        "source": "7165064a-8091-8c80-aef4-b747ae1451da",
+        "sourceHandle": null,
+        "target": "c4880ad5-d11a-1d78-afeb-7b4254592b96",
+        "targetHandle": null,
+        "id": "reactflow__edge-7165064a-8091-8c80-aef4-b747ae1451da-c4880ad5-d11a-1d78-afeb-7b4254592b96"
+      },
+      {
+        "source": "c4880ad5-d11a-1d78-afeb-7b4254592b96",
+        "sourceHandle": null,
+        "target": "c1575b10-8478-7ba5-19de-e9bd19790924",
+        "targetHandle": null,
+        "id": "reactflow__edge-c4880ad5-d11a-1d78-afeb-7b4254592b96-c1575b10-8478-7ba5-19de-e9bd19790924"
+      }
+    ]
+  },
+  "nodesData": {
+    "id": "3174f308-9027-0634-bd6a-6e185753872d",
+    "job_nodes": [
+      {
+        "id": "1-1",
+        "name": "ReadJDBC",
+        "oprName": "JDBC_reader",
+        "type": "read io",
+        "connection_type": "JDBC",
+        "yamlPath": "/path/to/ioconnectors/readio/jdbc_reader.yaml",
+        "imgpath": "/images/sidebar/jdbc_reader.png",
+        "x": 137.109375,
+        "y": 94,
+        "uniqueId": "7165064a-8091-8c80-aef4-b747ae1451da",
+        "u_id": "cbe8abe9-eabc-afe0-5b3c-5d6d5ecd6206",
+        "activity_state": false
+      },
+      {
+        "id": "3-1",
+        "name": "Add Column",
+        "oprName": "Add_Column",
+        "imgpath": "/images/sidebar/add_column.png",
+        "yamlPath": "/path/to/transformations/add_column.yaml",
+        "x": 300.109375,
+        "y": 94,
+        "uniqueId": "c4880ad5-d11a-1d78-afeb-7b4254592b96",
+        "u_id": "e910588d-1419-ac09-63c9-8f3a34534a4d",
+        "activity_state": false
+      },
+      {
+        "id": "2-1",
+        "name": "WriteJDBC",
+        "type": "write io",
+        "oprName": "jdbc_writer",
+        "imgpath": "/images/sidebar/jdbc_writer.png",
+        "yamlPath": "/path/to/ioconnectors/writeio/jdbc_writer.yaml",
+        "x": 462.109375,
+        "y": 97,
+        "uniqueId": "c1575b10-8478-7ba5-19de-e9bd19790924",
+        "u_id": "a61c4b54-5829-7a90-5d21-e6f5cc636b24",
+        "activity_state": false
+      }
+    ]
+  },
+  "pipeLines": {
+    "id": "3174f308-9027-0634-bd6a-6e185753872d",
+    "job_name": "ADD COLUMN",
+    "run_type": "spark",
+    "Global_variables": [],
+    "Pipeline_variables": [],
+    "settings": {
+      "concurrancy": "",
+      "elapsed_time_metric": "",
+      "isElapsedTimeMetricChecked": false
+    },
+    "connections": [
+      {
+        "connection_name": "JDBC connection",
+        "url": "jdbc:mysql://34.56.95.189:3306",
+        "username": "remote_user",
+        "password": "spark",
+        "database": "jobportal",
+        "provider": "MySQL",
+        "mysql_connector": "/home/amruthaiid/mysql-connector-j-8.0.33.jar",
+        "conn_id": 8184
+      }
+    ],
+    "tasks": [
+      {
+        "u_id": "7165064a-8091-8c80-aef4-b747ae1451da",
+        "id": "1-1",
+        "opr_name": "JDBC_reader",
+        "name": "ReadJDBC",
+        "description": "des",
+        "activity_state": false,
+        "timeout": "00:10:00",
+        "retry": 2,
+        "retry_interval": "00:01:00",
+        "secure_input": true,
+        "secure_output": true,
+        "input_items": [
+          {
+            "conn_id": 8184,
+            "tbname": "candidate",
+            "query": "select * from candidate"
+          }
         ],
-        "isStarted": true,
-        "triggers": [],
-        "reRun": false,
-        "readOnly": false
-    },
-    "nodesData": {
-        "id": "3174f308-9027-0634-bd6a-6e185753872d",
-        "job_nodes": [
-            {
-                "id": "1-1",
-                "name": "ReadJDBC",
-                "oprName": "JDBC_reader",
-                "type": "read io",
-                "connection_type": "JDBC",
-                "yamlPath": "\/path\/to\/ioconnectors\/readio\/jdbc_reader.yaml",
-                "imgpath": "\/images\/sidebar\/jdbc_reader.png",
-                "x": 202.109375,
-                "y": 97,
-                "uniqueId": "7165064a-8091-8c80-aef4-b747ae1451da",
-                "u_id": "cbe8abe9-eabc-afe0-5b3c-5d6d5ecd6206",
-                "activity_state": false
-            }
+        "user_properties": []
+      },
+      {
+        "u_id": "c4880ad5-d11a-1d78-afeb-7b4254592b96",
+        "id": "3-1",
+        "opr_name": "Add_Column",
+        "name": "Add Column",
+        "description": "des",
+        "activity_state": false,
+        "timeout": "00:10:00",
+        "retry": 2,
+        "retry_interval": "00:01:00",
+        "secure_input": true,
+        "secure_output": true,
+        "input_items": [
+          {
+            "column_name": "status",
+            "value": "active"
+          }
+        ],
+        "user_properties": [],
+        "dependency": [
+          "7165064a-8091-8c80-aef4-b747ae1451da"
         ]
-    },
-    "nodeEdges": {
-        "id": "3174f308-9027-0634-bd6a-6e185753872d",
-        "edges": []
-    }
+      },
+      {
+        "u_id": "c1575b10-8478-7ba5-19de-e9bd19790924",
+        "id": "2-1",
+        "opr_name": "jdbc_writer",
+        "name": "WriteJDBC",
+        "description": "des",
+        "activity_state": false,
+        "timeout": "00:10:00",
+        "retry": 2,
+        "retry_interval": "00:01:00",
+        "secure_input": true,
+        "secure_output": true,
+        "input_items": [
+          {
+            "conn_id": 8184,
+            "tbname": "add_new_column"
+          }
+        ],
+        "user_properties": [],
+        "dependency": [
+          "c4880ad5-d11a-1d78-afeb-7b4254592b96"
+        ]
+      }
+    ],
+    "isStarted": true,
+    "triggers": {},
+    "reRun": false,
+    "readOnly": false
+  }
 }
