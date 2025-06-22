@@ -1,0 +1,16 @@
+{
+  "displayName": "University",
+  "datasetName": "first_dataset_name",
+  "connections": [
+    {
+      "connection_name": "JDBC connection",
+      "url": "jdbc:mysql://34.56.95.189:3306",
+      "username": "remote_user",
+      "password": "spark",
+      "database": "jobportal",
+      "provider": "MySQL",
+      "mysql_connector": "/home/amruthaiid/mysql-connector-j-8.0.33.jar",
+      "conn_id": 6934
+    }
+  ]
+}
