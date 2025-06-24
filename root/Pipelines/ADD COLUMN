@@ -1,5 +1,68 @@
 {
   "id": "3174f308-9027-0634-bd6a-6e185753872d",
+  "nodeEdges": {
+    "id": "3174f308-9027-0634-bd6a-6e185753872d",
+    "edges": [
+      {
+        "source": "7165064a-8091-8c80-aef4-b747ae1451da",
+        "sourceHandle": null,
+        "target": "c4880ad5-d11a-1d78-afeb-7b4254592b96",
+        "targetHandle": null,
+        "id": "reactflow__edge-7165064a-8091-8c80-aef4-b747ae1451da-c4880ad5-d11a-1d78-afeb-7b4254592b96"
+      },
+      {
+        "source": "c4880ad5-d11a-1d78-afeb-7b4254592b96",
+        "sourceHandle": null,
+        "target": "c1575b10-8478-7ba5-19de-e9bd19790924",
+        "targetHandle": null,
+        "id": "reactflow__edge-c4880ad5-d11a-1d78-afeb-7b4254592b96-c1575b10-8478-7ba5-19de-e9bd19790924"
+      }
+    ]
+  },
+  "nodesData": {
+    "id": "3174f308-9027-0634-bd6a-6e185753872d",
+    "job_nodes": [
+      {
+        "id": "1-1",
+        "name": "ReadJDBC",
+        "oprName": "JDBC_reader",
+        "type": "read io",
+        "connection_type": "JDBC",
+        "yamlPath": "/path/to/ioconnectors/readio/jdbc_reader.yaml",
+        "imgpath": "/images/sidebar/jdbc_reader.png",
+        "x": 137.109375,
+        "y": 94,
+        "uniqueId": "7165064a-8091-8c80-aef4-b747ae1451da",
+        "u_id": "cbe8abe9-eabc-afe0-5b3c-5d6d5ecd6206",
+        "activity_state": false
+      },
+      {
+        "id": "3-1",
+        "name": "Add Column",
+        "oprName": "Add_Column",
+        "imgpath": "/images/sidebar/add_column.png",
+        "yamlPath": "/path/to/transformations/add_column.yaml",
+        "x": 300.109375,
+        "y": 94,
+        "uniqueId": "c4880ad5-d11a-1d78-afeb-7b4254592b96",
+        "u_id": "e910588d-1419-ac09-63c9-8f3a34534a4d",
+        "activity_state": false
+      },
+      {
+        "id": "2-1",
+        "name": "WriteJDBC",
+        "type": "write io",
+        "oprName": "jdbc_writer",
+        "imgpath": "/images/sidebar/jdbc_writer.png",
+        "yamlPath": "/path/to/ioconnectors/writeio/jdbc_writer.yaml",
+        "x": 462.109375,
+        "y": 97,
+        "uniqueId": "c1575b10-8478-7ba5-19de-e9bd19790924",
+        "u_id": "a61c4b54-5829-7a90-5d21-e6f5cc636b24",
+        "activity_state": false
+      }
+    ]
+  },
   "pipeLines": {
     "id": "3174f308-9027-0634-bd6a-6e185753872d",
     "job_name": "ADD COLUMN",
@@ -95,69 +158,8 @@
     "isStarted": true,
     "triggers": {},
     "reRun": false,
-    "readOnly": false
-  },
-  "nodesData": {
-    "id": "3174f308-9027-0634-bd6a-6e185753872d",
-    "job_nodes": [
-      {
-        "id": "1-1",
-        "name": "ReadJDBC",
-        "oprName": "JDBC_reader",
-        "type": "read io",
-        "connection_type": "JDBC",
-        "yamlPath": "/path/to/ioconnectors/readio/jdbc_reader.yaml",
-        "imgpath": "/images/sidebar/jdbc_reader.png",
-        "x": 137.109375,
-        "y": 94,
-        "uniqueId": "7165064a-8091-8c80-aef4-b747ae1451da",
-        "u_id": "cbe8abe9-eabc-afe0-5b3c-5d6d5ecd6206",
-        "activity_state": false
-      },
-      {
-        "id": "3-1",
-        "name": "Add Column",
-        "oprName": "Add_Column",
-        "imgpath": "/images/sidebar/add_column.png",
-        "yamlPath": "/path/to/transformations/add_column.yaml",
-        "x": 300.109375,
-        "y": 94,
-        "uniqueId": "c4880ad5-d11a-1d78-afeb-7b4254592b96",
-        "u_id": "e910588d-1419-ac09-63c9-8f3a34534a4d",
-        "activity_state": false
-      },
-      {
-        "id": "2-1",
-        "name": "WriteJDBC",
-        "type": "write io",
-        "oprName": "jdbc_writer",
-        "imgpath": "/images/sidebar/jdbc_writer.png",
-        "yamlPath": "/path/to/ioconnectors/writeio/jdbc_writer.yaml",
-        "x": 462.109375,
-        "y": 97,
-        "uniqueId": "c1575b10-8478-7ba5-19de-e9bd19790924",
-        "u_id": "a61c4b54-5829-7a90-5d21-e6f5cc636b24",
-        "activity_state": false
-      }
-    ]
-  },
-  "nodeEdges": {
-    "id": "3174f308-9027-0634-bd6a-6e185753872d",
-    "edges": [
-      {
-        "source": "7165064a-8091-8c80-aef4-b747ae1451da",
-        "sourceHandle": null,
-        "target": "c4880ad5-d11a-1d78-afeb-7b4254592b96",
-        "targetHandle": null,
-        "id": "reactflow__edge-7165064a-8091-8c80-aef4-b747ae1451da-c4880ad5-d11a-1d78-afeb-7b4254592b96"
-      },
-      {
-        "source": "c4880ad5-d11a-1d78-afeb-7b4254592b96",
-        "sourceHandle": null,
-        "target": "c1575b10-8478-7ba5-19de-e9bd19790924",
-        "targetHandle": null,
-        "id": "reactflow__edge-c4880ad5-d11a-1d78-afeb-7b4254592b96-c1575b10-8478-7ba5-19de-e9bd19790924"
-      }
-    ]
+    "readOnly": false,
+    "Internal_Ip": "10.128.15.206",
+    "External_IP": "34.9.126.39"
   }
 }
