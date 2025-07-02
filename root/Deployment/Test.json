@@ -1,0 +1,20 @@
+{
+  "repository": {
+    "id": 1,
+    "name": "frontend-web-app",
+    "description": "Customer facing web application"
+  },
+  "tasks": [
+    {
+      "id": 1751433287539,
+      "name": "Test",
+      "script": "// Requires email approval from: Michael Chen (Release Manager)\nnode {\r\n    git url: 'https://github.com/jfrogdev/project-examples.git'\r\n\r\n    // Get Artifactory server instance, defined in the Artifactory Plugin administration page.\r\n    def server = Artifactory.server \"SERVER_ID\"\r\n\r\n    // Read the upload spec and upload files to Artifactory.\r\n    def downloadSpec =\r\n            '''{\r\n            \"files\": [\r\n                {\r\n                    \"pattern\": \"libs-snapshot-local/*.zip\",\r\n                    \"target\": \"dependencies/\",\r\n                    \"props\": \"p1=v1;p2=v2\"\r\n                }\r\n            ]\r\n        }'''\r\n\r\n    def buildInfo1 = server.download spec: downloadSpec\r\n\r\n    // Read the upload spec which was downloaded from github.\r\n    def uploadSpec =\r\n            '''{\r\n            \"files\": [\r\n                {\r\n                    \"pattern\": \"resources/Kermit.*\",\r\n                    \"target\": \"libs-snapshot-local\",\r\n                    \"props\": \"p1=v1;p2=v2\"\r\n                },\r\n                {\r\n                    \"pattern\": \"resources/Frogger.*\",\r\n                    \"target\": \"libs-snapshot-local\"\r\n                }\r\n            ]\r\n        }'''\r\n\r\n    // Upload to Artifactory.\r\n    def buildInfo2 = server.upload spec: uploadSpec\r\n\r\n    // Merge the upload and download build-info objects.\r\n    buildInfo1.append buildInfo2\r\n\r\n    // Publish the build to Artifactory\r\n    server.publishBuildInfo buildInfo1\r\n}",
+      "environment": {
+        "id": "test",
+        "name": "Test",
+        "description": "For QA and integration DeploymentWizarding",
+        "color": "bg-blue-100 text-blue-800"
+      }
+    }
+  ]
+}
